@@ -1,0 +1,26 @@
+.CoverContainer {
+    background-image: url('https://wallpapercave.com/wp/wp9167469.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    
+  }
+  
+  .Title {
+    font-size: 3rem;
+    color:white;
+    text-align: center;
+    margin-top: 0.5rem;
+    
+  }
+  
+  .Subtitle {
+    font-size: 1.5rem;
+    color:white;
+    text-align: center;
+    margin-top: 20rem;
+
+  }
+.quotes{
+    color: white;
+}

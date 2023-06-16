@@ -1,0 +1,56 @@
+p{
+    font-size: 20px;
+    text-align: center;
+}
+h6{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+pre{
+    margin-left: 200px;
+    font-size:20px;
+    margin-top: -70px;
+}
+.about span{
+    color:  #6495ED;
+}
+.description p{
+    font-size: 25px;
+}
+.for_flex{
+    display: flex;
+}
+.description{
+    margin-left: 80px;
+}
+.image_1{
+    margin-left: 100px;
+}
+img{
+    border-radius: 20px;
+    width: 1000px;
+}
+.about{
+    margin-top: -50px;
+}
+/* h3{
+    font-size: 60px;
+} */
+.about1{
+    width: 300px;
+    height: 200px;
+    background-color: #6495ED;
+    border-radius: 20px;
+}
+.main_about{
+    display: flex;
+    margin-left: 200px;
+    margin-top: 50px;
+    gap: 100px;
+}
+.about1{
+    font-size: 50px;
+    font-weight: 100px;
+}

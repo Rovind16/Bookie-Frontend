@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(233, 233, 233);
+  align-items: center;
+  height: 85vh;
+  margin-top: 0%;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0rem;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 7px 70px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid  #6495ED;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.inline-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 45%;
+}
+.btr{
+  display: flex;
+}
+.submit-button {
+  font-size: 1rem;
+  padding: 0.1rem 1rem;
+  border-radius: 5px;
+  border: none;
+  margin-left: 1%;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0062cc;
+}
