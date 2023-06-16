@@ -37,7 +37,7 @@ export default class App extends Component {
     console.log(fname, lname, email, password);
     if(f==0){
      
-    fetch("http://localhost:5000/register", {
+    fetch("https://bookie-backend.onrender.com/register", {
       method: "POST",
       crossDomain: true,
       headers: {
