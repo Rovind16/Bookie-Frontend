@@ -6,7 +6,7 @@ function Name() {
   const [fname,setfname] = useState("");
   var x = localStorage.getItem("loggedIn");
   if(x==="true"){
-  fetch("http://localhost:5000/name", {
+  fetch("https://bookie-backend.onrender.com/name", {
     method: "POST",
     crossDomain: true,
     headers: {
