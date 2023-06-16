@@ -58,7 +58,7 @@ function PaymentPage() {
     alert('Payment submitted successfully!');
   };
   const onPay = ()=>{
-    fetch('http://localhost:5000/paymentdetais',
+    fetch('https://bookie-backend.onrender.com/paymentdetais',
     {
       method:'POST',
       headers: {
