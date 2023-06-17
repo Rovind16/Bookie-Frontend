@@ -16,7 +16,7 @@ function Cart() {
     setData(storedData);
   },[]);
   const addDb = () => {
-    fetch('http://localhost:5000/addToCart',
+    fetch('https://bookie-backend.onrender.com/addToCart',
     {
       method:'POST',
       headers: {
