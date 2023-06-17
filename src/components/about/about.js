@@ -5,7 +5,7 @@ function About() {
         <>
          <div class="about">
         <h6><span>ABOUT</span> US</h6>
-        <pre>Just like a great cover design captures your eye immediately, every good book description you see is interesting<br/>
+        <p>Just like a great cover design captures your eye immediately, every good book description you see is interesting<br/>
                       from the first line.People are always looking for a reason to move on to the next thing. Don’t give it to them. Make<br/> the first sentence something that grabs them and forces them to read the rest.
 
 Generally speaking, this means<br/> focusing on the boldest claim in the book, or the most sensational fact, or the most compelling idea.
@@ -13,7 +13,7 @@ Generally speaking, this means<br/> focusing on the boldest claim in the book, o
 Just like a great cover design captures your eye immediately, every good book description you see is interesting<br/>
                       from the first line.People are always looking for a reason to move on to the next thing. Don’t give it to them. Make<br/> the first sentence something that grabs them and forces them to read the rest.
 
-Generally speaking, this means<br/> focusing on the boldest claim in the book, or the most sensational fact, or the most compelling idea.</pre>
+Generally speaking, this means<br/> focusing on the boldest claim in the book, or the most sensational fact, or the most compelling idea.</p>
         
         </div>
         <div class="main_about">
