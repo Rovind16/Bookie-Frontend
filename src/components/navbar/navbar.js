@@ -15,6 +15,7 @@ const Navbar = () => {
     localStorage.clear();
     window.localStorage.setItem('loggedIn', false);
     localStorage.setItem('TotalAmount', 0);
+    window.location.href = "./home";
     window.alert('Logout Successful');
   }
 
