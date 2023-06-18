@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
 import './bookcart.css';
 function Cart() {
   const [data, setData] = useState([]);
   const [email,setEmail] = useState(localStorage.getItem('emaill'))
   const [cartval,setCart]=useState([]);
   const [data1, setData1] = useState([]);
-  const navigate = useNavigate();
+ 
   var x = localStorage.getItem("loggedIn");
   var k=0;
   if(x==="true"){
@@ -123,8 +123,8 @@ function Cart() {
 //       var f=obj.value;
 //       sum=sum+parseInt(f.substring(f.length-3,f.length));
 //  }
-    navigate('/pay');
-    //window.location.href = "./pay";
+    //navigate('/pay');
+    window.location.href = "./pay";
   }
  
   return (
