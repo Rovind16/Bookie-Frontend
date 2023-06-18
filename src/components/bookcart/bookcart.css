@@ -1,41 +1,90 @@
-.local-storage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
+.cart-heading {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.data-key {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.data-value {
+  color: #666;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-key {
+  font-weight: bold;
+}
+
+.data-value {
+  color: #666;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    max-width: 100%;
+    padding: 10px;
   }
-  
-  .title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  .data-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .data-item {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .data-key {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .data-value {
-    font-size: 18px;
-  }
-  
+}
