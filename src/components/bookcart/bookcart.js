@@ -8,7 +8,7 @@ function Cart() {
   var x = localStorage.getItem("loggedIn");
   var k=0;
   if(x==="true"){
-    fetch("http://localhost:5000/cartretrive", {
+    fetch("https://bookie-backend.onrender.com/cartretrive", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -94,7 +94,7 @@ function Cart() {
 
 
   const addDb = () => {
-    fetch('http://localhost:5000/addToCart',
+    fetch('https://bookie-backend.onrender.com/addToCart',
     {
       method:'POST',
       headers: {
