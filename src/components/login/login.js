@@ -30,7 +30,7 @@ function Login() {
             window.localStorage.setItem("emaill", email);
             window.localStorage.setItem("loggedIn", true);
   
-             window.location.href = "./home";
+              window.location.href = "./home";
           }else{
             alert('Username or Password Incorrect')
           }
