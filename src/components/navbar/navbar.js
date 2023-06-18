@@ -6,9 +6,7 @@ import Logo from './logo (2).png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
+  
 
   function logoutUser(e) {
     e.preventDefault();
