@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from './logo (2).png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   
 
   function logoutUser(e) {
@@ -13,7 +13,8 @@ const Navbar = () => {
     localStorage.clear();
     window.localStorage.setItem('loggedIn', false);
     localStorage.setItem('TotalAmount', 0);
-    window.location.href = "./home";
+    //window.location.href = "./home";
+    navigate('/home');
     window.alert('Logout Successful');
   }
 
