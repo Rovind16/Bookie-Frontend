@@ -2,157 +2,87 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './bookcart.css';
+
+const CartDisplay = ({ k }) => {
+  return (
+    <div className="cart-display">
+      {k.map((item, index) => (
+        <div key={index} className="cart-item">
+          <p className="description">Description: {item.description}</p>
+          <img className="image" src={item.link} alt="Product Image" />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 function Cart() {
   const [data, setData] = useState([]);
-  const [email,setEmail] = useState(localStorage.getItem('emaill'))
-  const [cartval,setCart]=useState([]);
+  const [email, setEmail] = useState(localStorage.getItem('emaill'));
+  const [cart, setCart] = useState([]);
   const [data1, setData1] = useState([]);
+  const [k, setK] = useState([]);
   const navigate = useNavigate();
-  var x = localStorage.getItem("loggedIn");
-  var k=0;
-  if(x==="true"){
-    fetch("https://bookie-backend.onrender.com/cartretrive", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        email,
-      })    
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      //console.log(data);
-      setCart(data.data);
-      if(data.error=="error"){
-        const temp = [
-          "null"
-        ];
-       
-      }else{
-        setData1(cartval);
-        
-      }
-    });    
-  }
-  
 
-  
- 
   useEffect(() => {
-     const temp=[];
-      let temp1=cartval
-      for(let i=0;i<temp1.length;i++){
-      const obj = temp1[i];
-      const key = obj.key;
-      const value = obj.value;
-      if(key=="emaill"){
-        continue;
-      }
-      else if(key=="TotalAmount"){
-       continue;
-      }
-      
-      else{
-      temp.push({ key, value });
-      }
-    }
-    
-    for(let i=0;i<cartval.length;i++){
-      const obj = cartval[i];
-      const key = obj.key;
-      const value = obj.value;
-     // console.log(key);
-      if(key=="emaill"){
-        continue;
-      }
-      else if(key=="TotalAmount"){
-        //localStorage.setItem("TotalAmount", value);
-         var l=value
-      }
-      else{
-      temp.push({ key, value });
-      } 
-    }
-    setData1(temp)
-    const st=[];
-    const keys = Object.keys(localStorage); 
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const value = localStorage.getItem(key);
-      if(key!=="token" && key!=="loggedIn" && key!=='emaill'){
-      st.push({ key, value });
-      //console.log(key);
-     }
-    }
-    setData(st);
-    
-  },[]);
-  
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://bookie-backend.onrender.com/cartretrive', {
+          method: 'POST',
+          crossDomain: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+          body: JSON.stringify({
+            email,
+          }),
+        });
+        const data = await response.json();
 
+        if (data.status === 'ok') {
+          setCart(data.data);
+          setData1(data.data1);
+          cartdisplay(data.data, data.data1);
+        } else {
+          const temp = ['null'];
+          setCart(temp);
+        }
+      } catch (error) {
+        console.error('Error retrieving cart data:', error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
+  const cartdisplay = (data, data1) => {
+    const tempK = [];
+    for (var i = 0; i < data1.length; i++) {
+      tempK.push({  link: data1[i],description: data[i] });
+    }
+    setK(tempK);
+  };
 
   const addDb = () => {
-    fetch('https://bookie-backend.onrender.com/addToCart',
-    {
-      method:'POST',
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body:JSON.stringify({
-        email,
-        data,
-        data1
-      })
-    })
-    .then((res) => res.json())
-    .then((data) => {
-    console.log(data);
-    })
-
-//     const amt=[];
-//     var sum=0;
-    
-//     for(let i=0;i<data1.length;i++){
-//       const obj=data1[i];
-//       var f=obj.value;
-//       sum=sum+parseInt(f.substring(f.length-3,f.length));
-//  }
     navigate('/pay');
-    //window.location.href = "./pay";
-  }
- 
+  };
+
   return (
-    <div>
-      <h1>Book Cart</h1>
-     
-      {data1
-  .filter(obj => obj.key !== 'TotalAmount')
-  .map(obj => (
-    <div className="data-item" key={obj.key}>
-      <p className='data-key'> {obj.key}</p>
-      <p className='data-value'>{obj.value}</p>
-    </div>
-  ))
-}
-
-{data.filter(item => item.key !== "TotalAmount").map(item => (
-  <div className="data-item" key={item.key}>
-    <p className="data-key">{item.key}:</p>
-    <p className="data-value">{item.value}</p>
+    <div className="cart-display">
+    <h2>Book Cart</h2>
+    {k.map((item, index) => (
+      <div key={index} className="cart-item">
+        <div className="image-container">
+          <img className="image" src={item.link} alt="Product Image" />
+        </div>
+        <p className="description">{item.description}</p>
+      </div>
+    ))}
   </div>
-))}
-
-        <button onClick={addDb} className='submit-button'>Pay</button>
-    </div>
-    
-  );
-}
+   
+);
+};
 
 export default Cart;
