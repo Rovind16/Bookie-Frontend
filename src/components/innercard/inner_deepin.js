@@ -19,7 +19,7 @@ function Inner_deepin() {
                 const imageLink = imgElement.getAttribute('src');
                 var storage=a[i].childNodes[1].childNodes[0].innerHTML+" "+qty[i].value+" books ";
                 console.log(storage)
-                fetch('http://localhost:5000/addToCart',
+                fetch('https://bookie-backend.onrender.com/addToCart',
                         {
                         method:'POST',
                         headers: {
@@ -40,7 +40,7 @@ function Inner_deepin() {
 
 
     //
-                fetch('http://localhost:5000/cartimg',
+                fetch('https://bookie-backend.onrender.com/cartimg',
                 {
                   method:'POST',
                   headers: {
